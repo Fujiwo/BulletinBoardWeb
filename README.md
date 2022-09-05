@@ -1,11 +1,16 @@
 # BulletinBoardWeb
 
-Å‰‚É Migrations ‚ğíœ‚µAƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Å‰º‹L‚ğÀs
+* 2022å¹´9æœˆ5æ—¥ç‰ˆ
+* .NET ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€å‚ç…§ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãªã©ã¯ BulletinBoardWeb.csproj ã‚’å‚ç…§ã®ã“ã¨ã€‚
+
+## åˆ©ç”¨æ–¹æ³•
+
+1. æœ€åˆã« Migrations ã‚’å‰Šé™¤ã—ã€ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã§ä¸‹è¨˜ã‚’å®Ÿè¡Œ
 
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 
-“K‹XAÚ‘±•¶š—ñ‚ğ•ÏX
+2. é©å®œã€æ¥ç¶šæ–‡å­—åˆ—ã‚’å¤‰æ›´
 
 appsettings.json
     "DefaultConnection": "Data Source=.\\SQLEXPRESS;Initial Catalog=BulletinBoard;Integrated Security=True;"
