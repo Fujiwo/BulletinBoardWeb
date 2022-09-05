@@ -1,9 +1,10 @@
-﻿using BulletinBoardWeb.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BulletinBoardWeb.Controllers
 {
+    using Models;
+
     public class ImageFileController : Controller
     {
         readonly PostContext _context;
@@ -26,7 +27,7 @@ namespace BulletinBoardWeb.Controllers
                 using (var memoryStream = new MemoryStream()) {
                     await model.PostedFile.CopyToAsync(memoryStream);
 
-                    // アップロードできるイメージ ファイルは 2 MB 以下
+                    // アップロードできる画像ファイルは 2 MB 以下
                     if (memoryStream.Length <= 2 * 1024 * 1024) {
                         var byteArray = memoryStream.ToArray();
                         var file = new ImageFile() {
@@ -56,12 +57,9 @@ namespace BulletinBoardWeb.Controllers
             return imageFile is null ?  NotFound() : View(imageFile);
         }
 
-        // POST: ImageFileEntries/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditPost(int? id/*, [Bind("Id,Name,Description")] ImageFile imageFile*/)
+        public async Task<IActionResult> EditPost(int? id)
         {
             //if (id != imageFile.Id)
             //    return NotFound();
@@ -73,9 +71,10 @@ namespace BulletinBoardWeb.Controllers
                                      .FirstOrDefaultAsync(f => f.Id == id);
             if (fileToUpdate != null) {
                 if (await TryUpdateModelAsync<ImageFile>(
-                    fileToUpdate,
-                    "",
-                    f => f.Name, f => f.Description)) {
+                    fileToUpdate            ,
+                    ""                      ,
+                    file => file.Name       ,
+                    file => file.Description)) {
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }

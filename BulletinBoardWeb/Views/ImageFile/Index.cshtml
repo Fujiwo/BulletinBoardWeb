@@ -33,7 +33,6 @@
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @*アクションメソッドですべてのデータを Model として受け取っているので、Model に含まれる画像のバイト列を Data URL 形式に変換して src 属性に設定することにより画像を表示できる。*@
                         <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.Image)" alt="@item.Name" title="@item.Name" />
                     </td>
                     <td>

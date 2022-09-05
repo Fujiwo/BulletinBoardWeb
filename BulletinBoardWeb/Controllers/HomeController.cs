@@ -1,9 +1,10 @@
-﻿using BulletinBoardWeb.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace BulletinBoardWeb.Controllers
 {
+    using Models;
+
     public class HomeController : Controller
     {
         readonly ILogger<HomeController> _logger;
