@@ -1,5 +1,7 @@
 # BulletinBoardWeb
 
+ASP.NET Core で画像ファイルをアップロードし、データベースに格納し、表示するサンプル。
+
 * 2022年9月5日版
 * .NET のバージョン、参照パッケージなどは BulletinBoardWeb.csproj を参照のこと。
 
