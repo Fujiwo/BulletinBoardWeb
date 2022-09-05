@@ -1,6 +1,13 @@
 # BulletinBoardWeb
 
-最初に Migrations を削除し、コマンドラインで下記を実行
+ASP.NET Core で画像ファイルをアップロードし、データベースに格納し、表示するサンプル。
+
+* 2022年9月5日版
+* .NET のバージョン、参照パッケージなどは BulletinBoardWeb.csproj を参照のこと。
+
+## 利用方法
+
+1. 最初に Migrations を削除し、コマンドラインで下記を実行
 
 dotnet ef migrations add InitialCreate
 dotnet ef database update
