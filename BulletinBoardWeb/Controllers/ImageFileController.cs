@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// 【変更】 画像ファイル アップロード用のコントローラー
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BulletinBoardWeb.Controllers
 {
     using Models;
+    using ViewModels;
 
     public class ImageFileController : Controller
     {

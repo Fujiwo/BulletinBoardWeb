@@ -1,4 +1,6 @@
-﻿// 最初にコマンドラインで下記を実行
+﻿// 【変更】 モデル クラス群
+
+// 最初にコマンドラインで下記を実行
 // dotnet ef migrations add InitialCreate
 // dotnet ef database update
 
@@ -23,22 +25,6 @@ namespace BulletinBoardWeb.Models
         [Display(Name = "画像")]
         [Required]
         public byte[] Image { get; set; } = null!;
-    }
-    
-    public class ImageFileUploadViewModel
-    {
-        [Display(Name = "名前")]
-        [Required(ErrorMessage = "{0} は必須")]
-        [StringLength(25, ErrorMessage = "{0} は {1} 文字以内")]
-        public string Name { get; set; } = "";
-
-        [Display(Name = "説明")]
-        [StringLength(250, ErrorMessage = "{0} は {1} 文字以内")]
-        public string Description { get; set; } = "";
-
-        [Display(Name = "ファイル")]
-        [Required(ErrorMessage = "{0} は必須")]
-        public IFormFile PostedFile { get; set; } = null!;
     }
 
     public class PostContext : DbContext

@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// 【変更】 トップ ページのコントローラー
+
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace BulletinBoardWeb.Controllers
 {
-    using Models;
+    using ViewModels;
 
     public class HomeController : Controller
     {
